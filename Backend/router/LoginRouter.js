@@ -8,8 +8,8 @@ const CheckLogin = require('../middlewares/checklogin');
 
 
 
-router.post("/login",login);
-router.get("/profile/:username",CheckLogin,profile);
+router.post("/iut-cse/admin/login",login);
+router.get("/iut-cse/admin/profile/:username",CheckLogin,profile);
 router.delete("/",logout)
 
 module.exports = router;

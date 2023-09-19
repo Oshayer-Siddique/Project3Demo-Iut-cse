@@ -56,7 +56,7 @@ async function login(req,res,next){
 
         });
         
-        res.redirect(`/profile/${user.username}`)
+        res.redirect(`/iut-cse/admin/profile/${user.username}`)
         //res.send(token);
         next();
 

@@ -45,6 +45,8 @@ dotenv.config();
 // })
 
 const RegisterRouter = require('./router/RegisterRouter');
+const LoginRouter = require('./router/LoginRouter');
+
 
 
 
@@ -61,6 +63,7 @@ const RegisterRouter = require('./router/RegisterRouter');
 
 //app.use('/',LandingRouter);
 app.use('/',RegisterRouter);
+app.use('/',LoginRouter);
 
 
 
