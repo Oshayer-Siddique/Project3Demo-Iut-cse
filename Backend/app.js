@@ -46,7 +46,8 @@ dotenv.config();
 
 const RegisterRouter = require('./router/RegisterRouter');
 const LoginRouter = require('./router/LoginRouter');
-
+const UploadBlogRouter = require('./router/UploadBlogRouter');
+const { uploadBlog } = require("./controller/UploadBlogController");
 
 
 
@@ -64,6 +65,7 @@ const LoginRouter = require('./router/LoginRouter');
 //app.use('/',LandingRouter);
 app.use('/',RegisterRouter);
 app.use('/',LoginRouter);
+app.use('/',uploadBlog);
 
 
 
