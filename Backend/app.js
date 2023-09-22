@@ -47,6 +47,9 @@ dotenv.config();
 const RegisterRouter = require('./router/RegisterRouter');
 const LoginRouter = require('./router/LoginRouter');
 const UploadBlogRouter = require('./router/UploadBlogRouter');
+const memberRouter = require("./router/memberRouter");
+
+
 
 
 
@@ -66,6 +69,9 @@ const UploadBlogRouter = require('./router/UploadBlogRouter');
 app.use('/',RegisterRouter);
 app.use('/',LoginRouter);
 app.use('/',UploadBlogRouter);
+app.use('/',memberRouter);
+
+
 
 
 

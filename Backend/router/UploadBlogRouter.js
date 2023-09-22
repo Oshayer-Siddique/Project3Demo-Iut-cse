@@ -4,7 +4,7 @@ const router = express.Router();
 
 const{uploadBlog} = require('../controller/UploadBlogController');
 
-router.post('/uploadblog',uploadBlog);
+router.post('/iut-cse/admin/uploadblog',uploadBlog);
 
 
 

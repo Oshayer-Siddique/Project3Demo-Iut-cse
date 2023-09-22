@@ -39,7 +39,7 @@ async function uploadBlog(req,res,next){
     }
     catch(err){
 
-        res.send("ERROR HAENED");
+        res.send("ERROR HAppend in Blog");
 
     }
 
