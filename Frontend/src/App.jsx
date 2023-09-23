@@ -6,6 +6,9 @@ import LoginForm from './Pages/LoginForm.jsx';
 import UserProfile from './Pages/Profile.jsx';
 
 const App = () => {
+  const [showBlogWriter, setBlogWriter] = useState(false);
+
+  
   return (
     <>
       <BrowserRouter>
