@@ -8,13 +8,14 @@ const RegistrationForm = () => {
   const [username, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [successful, setSuccess] = useState('');
+  const [successful, setSuccess] = useState(false);
   const [errorMessage, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const formData = { username, password, email };
+    setError('Please wait')
 
     axios.post('http://localhost:5050/iut-cse/admin/register', formData)
       .then((response) => {
@@ -23,8 +24,11 @@ const RegistrationForm = () => {
         // Optionally, display a success message or reset the form here
       })
       .catch((error) => {
-        console.error('Error saving information:', error.response.data.error);
-        setError(error.response.data.error);
+        console.error('Error saving information:', error);
+        if(error.response)
+          setError(error.response.data.error);
+        else
+          setError('Could not connect to server')
         // Optionally, display an error message or handle errors here
       });
   };
@@ -53,13 +57,13 @@ const RegistrationForm = () => {
     </div>
   );
 
-  if(successful != 'True') return (
+  if(!successful) return (
     <div className="app">
       <div className="login-form">
           <div className="title">Sign In</div>
           {renderForm}
+          <span className='error'>{errorMessage}</span><br/>
           <Link to="/admin/login">Go Back</Link>
-          <span className='error'>{errorMessage}</span>
       </div>
     </div>
   );

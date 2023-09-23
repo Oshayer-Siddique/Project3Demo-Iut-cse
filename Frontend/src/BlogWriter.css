@@ -1,0 +1,18 @@
+.BlogWriter{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color: #333;
+    color:white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.BlogWriter textarea{
+    resize:none;
+    height: 60vh;
+}
+.BlogWriter input[type=text], textarea{
+    width:90%;
+}
