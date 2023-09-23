@@ -1,13 +1,13 @@
 // frontend/src/App.js
 import React, { useState } from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import axios from 'axios';
 import "../newstyle.css";
 
 const LoginForm = () => {
   const [username, setName] = useState('');
   const [password, setPassword] = useState('');
-
+  let navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -16,8 +16,8 @@ const LoginForm = () => {
     axios.post('http://localhost:5050/iut-cse/admin/login', formData)
       .then((response) => {
         console.log(response);
-        console.log("OK")
-        setName(""); setPassword("");
+        console.log("OK");
+        navigate(`/admin/profile/${username}`);
         
         // Optionally, display a success message or reset the form here
       })
@@ -40,7 +40,7 @@ const LoginForm = () => {
           <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
         </div>
         <button type="submit">Login</button><br/>
-        <Link to="/register">Don't have an account?</Link>
+        <Link to="/admin/register">Don't have an account?</Link>
       </form>
     </div>
   );
