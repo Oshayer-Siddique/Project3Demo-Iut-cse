@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import React, { useState } from 'react';
-import {Link} from "react-router-dom";
 import axios from 'axios';
-import "../BlogWriter.css";
+import { BlogWriter } from '../BlogComponents/BlogWriter';
+import { BlogReader } from '../BlogComponents/BlogReader';
 
 function UserProfile() {
   const { username } = useParams();
@@ -19,29 +19,7 @@ function UserProfile() {
 //     }
 //   );
 
-const [title, setTitle] = useState('');
-const [body, setBody] = useState('');
-const [errorMessage, setError] = useState('');
 const [showBlogWriter, setBlogWriter] = useState(false);
-
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-
-  const formData = { title, body };
-  setError('Please Wait');
-
-  axios.post('http://localhost:5050/iut-cse/admin/uploadblog', formData)
-    .then((response) => {
-      console.log(response);
-      console.log("Blog Sent");
-      setTitle('')
-      setBody('')
-    })
-    .catch((error) => {
-      console.error('Error sending information:\n', error);
-    });
-};
 
 return (
   <>
@@ -49,22 +27,9 @@ return (
   <button type="button" onClick={()=>{
     setBlogWriter(true);
   }}>New Blog</button>
+  <BlogReader/>
 
-  {showBlogWriter && (<div className='BlogWriter'>
-    <h1>New Blog</h1>
-    <form onSubmit={handleSubmit} aria-disabled>
-      <div>
-        <input placeholder='Title' type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
-      </div>
-      <div>
-        <textarea placeholder='Enter blog body' name='body' value={body} onChange={(e) => setBody(e.target.value)} required></textarea>
-      </div>
-      <button type="submit">Submit</button>
-      <button type="button" onClick={()=>{
-        setBlogWriter(false);
-      }}>Cancel</button><br/>
-    </form>
-  </div>)}
+  {showBlogWriter && <BlogWriter changeVisibility={setBlogWriter}/>}
   </>
 );
 }
