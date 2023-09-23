@@ -8,6 +8,7 @@
     height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     background-color: #f8f9fd;
+    text-align: center;
   }
   
   form {
@@ -43,3 +44,5 @@
   button:hover {
     opacity: 0.8;
   }
+
+  

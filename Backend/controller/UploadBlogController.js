@@ -15,31 +15,27 @@ async function uploadBlog(req,res,next){
     const {title,body} = req.body;
     try{
 
-        let authorization = req.cookies[process.env.COOKIE_NAME];
-        const decoded = jwt.verify(authorization,process.env.secret_key);
-        const uploadername = decoded.username;
+        // let authorization = req.cookies[process.env.COOKIE_NAME];
+        // const decoded = jwt.verify(authorization,process.env.secret_key);
+        // const uploadername = decoded.username;
 
-        const uploader = uploadername;
+        //const uploader = uploadername;
         //res.send(uploadername);
 
         const newBlog = new Blog({
             title,
             body,
-            uploader,
+            
 
         })
         await newBlog.save();
         res.send("Data Saved");
-
-
-
-
-
+        next();
 
     }
     catch(err){
 
-        res.send("ERROR HAppend in Blog");
+        res.send(err);
 
     }
 
@@ -60,14 +56,7 @@ async function getblogs(req,res){
 }
 
 
-async function deleteblogs(req,res){
-    try{
-        
-    }
-    catch(err){
 
-    }
-}
 
 
 

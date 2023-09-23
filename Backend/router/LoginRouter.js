@@ -9,7 +9,7 @@ const CheckLogin = require('../middlewares/checklogin');
 
 
 router.post("/iut-cse/admin/login",login);
-router.get("/iut-cse/admin/profile/:username",CheckLogin,profile);
+router.get("/iut-cse/admin/profile/:username", profile);
 router.delete("/iut-cse/admin/logout",logout)
 
 module.exports = router;
