@@ -19,7 +19,7 @@ async function profile(req,res){
 
 
     if(user){
-        res.send({user : user});
+        res.send({user : username});
     }
     else{
         res.send("Failed");
