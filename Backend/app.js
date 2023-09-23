@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const multer = require('multer');
 const path = require('path');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const app = express();
 
 
@@ -24,7 +25,7 @@ mongoose
 
 
 app.use(express.json());
-
+app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
