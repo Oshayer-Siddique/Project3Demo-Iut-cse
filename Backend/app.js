@@ -50,6 +50,10 @@ const LoginRouter = require('./router/LoginRouter');
 const UploadBlogRouter = require('./router/UploadBlogRouter');
 const memberRouter = require("./router/memberRouter");
 const AboutRouter = require('./router/AboutRouter');
+const IntraRegRouter = require('./router/IntraRegRouter');
+const InterRegRouter = require('./router/InterRegRouter');
+
+
 
 
 
@@ -72,6 +76,8 @@ app.use('/',LoginRouter);
 app.use('/',UploadBlogRouter);
 app.use('/',memberRouter);
 app.use('/',AboutRouter);
+app.use('/',IntraRegRouter);
+app.use('/',InterRegRouter);
 
 
 

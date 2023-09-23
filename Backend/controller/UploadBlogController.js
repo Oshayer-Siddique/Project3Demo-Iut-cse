@@ -45,7 +45,7 @@ async function uploadBlog(req,res,next){
 
 async function getblogs(req,res){
     try{
-        const blogs = await Blog.find({},'title body uploader');
+        const blogs = await Blog.find({},'title body');
         res.json(blogs);
 
     }
