@@ -49,7 +49,7 @@ async function uploadBlog(req,res,next){
 
 async function getblogs(req,res){
     try{
-        const blogs = await Blog.find({});
+        const blogs = await Blog.find({},'title body uploader');
         res.json(blogs);
 
     }
@@ -57,6 +57,16 @@ async function getblogs(req,res){
         res.status(500).json({message:"Error in getting blog"});
     }
 
+}
+
+
+async function deleteblogs(req,res){
+    try{
+        
+    }
+    catch(err){
+
+    }
 }
 
 
