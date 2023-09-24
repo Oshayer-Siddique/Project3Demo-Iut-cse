@@ -5,6 +5,8 @@ import RegistrationForm from './Pages/RegistrationForm.jsx';
 import LoginForm from './Pages/LoginForm.jsx';
 import UserProfile from './Pages/Profile.jsx';
 import AboutPage from './Pages/About.jsx';
+
+import Login from './Pages/Login.jsx';
 import BlogsHomePage from './Pages/Blogs Home.jsx'
 import AddExecMember from './Pages/AddExecMember.jsx';
 import ExecutiveMembers from './Pages/ExecutiveMembers.jsx';
@@ -23,8 +25,11 @@ const App = () => {
       <br/><br/><br/>
       <BrowserRouter>
       <Routes>
+
+
         <Route index element={<BlogsHomePage/>} />
-        <Route path="/admin/login" element={<LoginForm/>} />
+        <Route path="/admin/login" element={<Login/>} />
+
         <Route path="/admin/register" element={<RegistrationForm/>} />
         <Route path="/admin/profile/:username" element={<UserProfile/>} />
         <Route path="/about" element={<AboutPage/>} />
