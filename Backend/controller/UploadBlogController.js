@@ -48,10 +48,10 @@ async function search_blog(req, res) {
       {
         title: { $regex: title, $options: "i" },
       },
-      "title"
+      
       );
 
-      const matchingblogsnames = matchingblogs.map(blogs => blogs.title);
+      const matchingblogsnames = matchingblogs.map(blogs => blogs);
       res.json(matchingblogsnames);
 
 
