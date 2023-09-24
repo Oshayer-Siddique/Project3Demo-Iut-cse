@@ -1,15 +1,13 @@
 const HeaderComponent =()=>{
     return <header id="header" className="fixed-top">
     <div className="container d-flex align-items-center">
-      <h1 className="logo me-auto"><a href="/">Mentor</a></h1>
+      <h1 className="logo me-auto"><a href="/">IUT-CS</a></h1>
       <nav id="navbar" className="navbar order-last order-lg-0">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="/about">Home</a></li>
           <li><a href="/blogs">Blogs</a></li>
           <li><a href="/ExecMembers">Executive Members</a></li>
           <li><a href="#">Events</a></li>
-          <li><a href="#">Pricing</a></li>
           <li className="dropdown"><a href="#"><span>Competitions</span> <i className="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/InterRegistration">Inter University</a></li>

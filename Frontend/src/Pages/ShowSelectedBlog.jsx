@@ -12,12 +12,24 @@ export function ShowSelectedBlog() {
             </div>
         </div>
         <br />
-        <div className="pre">{sessionStorage.getItem('body')}</div>
+
+        <div className="card w-100 ">
+            <div className="card">
+                <div className="card-body">
+                    <div className="pre">{sessionStorage.getItem('body')}</div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
 
         <div>
-            <a className="get-started-btn" href="#" onClick={() => {
+            <div className = "text-center">
+            <a className="get-started-btn " href="#" onClick={() => {
                 navigate(-1);
             }}>Go Back</a>
+                </div>
         </div>
 
     </>
