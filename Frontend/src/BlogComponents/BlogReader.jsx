@@ -4,7 +4,6 @@ import axios from 'axios';
 
 export function BlogReader() {
   const [Blogs, setBlogs] = useState([]);
-  const [Post, setPost] = useState({});
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -12,7 +11,6 @@ export function BlogReader() {
       // console.log(res)
       let i = 0;
       setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body })))
-      setPost(res.data[0])
     })
   }, [])
 
@@ -31,10 +29,12 @@ export function BlogReader() {
   // </>
 
   return <section id="about" className="about">
+    <div className="container">
+    <div className="row">
     {
-      Blogs.map(b => (<div className="container" key={b.ID}>
-        <div className="row">
-          <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+      Blogs.map(b => (
+        
+          <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" key={b.ID}>
             <h3>{b.title}</h3>
             <p className="fst-italic">
               {b.body.substring(0, 30)}...<br />
@@ -45,11 +45,13 @@ export function BlogReader() {
               }}>Read More</a>
             </p>
           </div>
-        </div>
-      </div>
+        
+      
       )
       )
     }
+    </div>
+    </div>
     <br /><br />
   </section>
 }
