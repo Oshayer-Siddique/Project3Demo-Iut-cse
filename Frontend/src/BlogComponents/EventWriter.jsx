@@ -1,25 +1,26 @@
+import "../BlogWriter.css";
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function AddIntraComp(){
+function EventWriter(props){
     const [title, setTitle] = useState('');
-    const [link, setLink] = useState('');
+    const [body, setBody] = useState('');
     const [message, setMessage] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
       
-        const formData = { title, link };
+        const formData = { title, body };
         setMessage('Please Wait');
       
-        axios.post('http://localhost:5050/iut-cse/intrareg', formData)
+        axios.post('http://localhost:5050/iut-cse/admin/uploadevent', formData)
           .then((response) => {
             console.log(response);
-            console.log("Event Created");
+            console.log("Event Sent");
             if(response.data){
                 setMessage(response.data)
                 setTitle('')
-                setLink('')
+                setBody('')
             }
             else{
                 setMessage("Server Error")
@@ -31,22 +32,22 @@ function AddIntraComp(){
           });
       };
 
-    return (<div className='intra-reg-form'>
-    <h3>New Intra Uni Event</h3>
+    return (<div className='BlogWriter'>
+    <h1>New Event</h1>
     <form onSubmit={handleSubmit} aria-disabled>
       <div>
         <input placeholder='Title' type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
       </div>
       <div>
-        <input placeholder='Google Form Link' name='link' value={link} onChange={(e) => setLink(e.target.value)} required/>
-      </div>
-      <div>
-        <button type="submit">Submit</button>
+        <textarea placeholder='Enter blog body' name='body' value={body} onChange={(e) => setBody(e.target.value)} required></textarea>
       </div>
       {message && <div>{message}</div>}
-      <br/>
+      <button type="submit">Submit</button>
+      <button type="button" onClick={()=>{
+        props.changeVisibility(false);
+      }}>Close</button><br/>
     </form>
   </div>);
 }
 
-export {AddIntraComp};
+export {EventWriter};

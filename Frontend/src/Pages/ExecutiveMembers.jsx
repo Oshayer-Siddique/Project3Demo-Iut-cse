@@ -10,7 +10,7 @@ export default function ExecutiveMembers() {
     axios.get('http://localhost:5050/iut-cse/getmember').then(res => {
       // console.log(res)
       let i = 0;
-      setMembers(res.data.map(mem => ({ name: mem.name, post: mem.post, contact:mem.contact, ID: i})))
+      setMembers(res.data.map(mem => ({ name: mem.name, post: mem.post, contact:mem.contact, ID: i++})))
     })
   }, [])
 

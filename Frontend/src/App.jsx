@@ -10,7 +10,9 @@ import Login from './Pages/Login.jsx';
 import BlogsHomePage from './Pages/Blogs Home.jsx'
 import AddExecMember from './Pages/AddExecMember.jsx';
 import ExecutiveMembers from './Pages/ExecutiveMembers.jsx';
+import EventsAndAchievements from './Pages/EventsAndAchievements.jsx';
 import { ShowSelectedBlog } from './Pages/ShowSelectedBlog.jsx';
+import { ShowSelectedEvent } from './Pages/ShowSelectedEvent.jsx';
 import { HeaderComponent, FooterComponent } from './BlogComponents/HeaderFooter.jsx';
 
 
@@ -27,7 +29,7 @@ const App = () => {
       <Routes>
 
 
-        <Route index element={<BlogsHomePage/>} />
+        <Route index element={<AboutPage/>} />
         <Route path="/admin/login" element={<Login/>} />
 
         <Route path="/admin/register" element={<RegistrationForm/>} />
@@ -35,9 +37,11 @@ const App = () => {
         <Route path="/about" element={<AboutPage/>} />
         <Route path="/blogs" element={<BlogsHomePage/>} />
         <Route path="/showSelectedBlog" element={<ShowSelectedBlog/>} />
+        <Route path="/showSelectedEvent" element={<ShowSelectedEvent/>} />
         <Route path="/admin/AddExecMember" element={<AddExecMember/>} />
         <Route path="/ExecMembers" element={<ExecutiveMembers/>} />
         <Route path="/InterRegistration" element={<InterRegistrationForm/>} />
+        <Route path="/Events" element={<EventsAndAchievements/>} />
       </Routes>
       </BrowserRouter>
 
