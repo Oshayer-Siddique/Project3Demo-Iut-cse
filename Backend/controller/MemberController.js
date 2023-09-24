@@ -46,8 +46,21 @@ async function search_member(req,res){
     }
 }
 
+
+
+async function getmember(req,res){
+    try {
+        const members = await Member.find({}, "name post contact");
+        res.json(members);
+      } catch (err) {
+        res.status(500).json({ message: "Error in getting blog" });
+      }
+
+}
+
 module.exports = {
     addmember,
     search_member,
+    getmember,
 }
 
