@@ -63,8 +63,32 @@ async function search_blog(req, res) {
   }
 }
 
+
+async function deleteblog(req,res){
+
+    const {title} = req.body;
+    try{
+        const deleteblog = await Blog.findOneAndDelete({title});
+        if(!deleteblog){
+            res.send("Blog not found");
+        }
+        res.send("Deleted");
+
+    }
+    catch(err){
+        res.send("error");
+
+    }
+
+
+}
+
+
+
 module.exports = {
   uploadBlog,
   getblogs,
   search_blog,
+  deleteblog,
+
 };
