@@ -14,7 +14,7 @@ const HeaderComponent =()=>{
           <li className="dropdown"><a href="#"><span>Competitions</span> <i className="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/InterRegistration">Inter University</a></li>
-              <li><a href="#">Intra University</a></li>
+              <li><a href="/IntraCompetitions">Intra University</a></li>
             </ul>
           </li>
           <li><a href="#">Contact</a></li>

@@ -85,7 +85,7 @@ const InterRegistrationForm = () => {
   );
 
   if(!successful) return (
-    <div className="app">
+    <div className="app">   
       <div className="login-form">
           <div className="title">Register Now!</div>
           {renderForm}
