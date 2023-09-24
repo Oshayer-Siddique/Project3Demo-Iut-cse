@@ -42,6 +42,8 @@ async function InterReg(req,res,next){
 
 };
 
+
+
 module.exports = {
     InterReg,
 }
