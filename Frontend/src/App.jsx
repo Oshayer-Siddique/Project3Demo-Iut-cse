@@ -5,7 +5,7 @@ import RegistrationForm from './Pages/RegistrationForm.jsx';
 import LoginForm from './Pages/LoginForm.jsx';
 import UserProfile from './Pages/Profile.jsx';
 import AboutPage from './Pages/About.jsx';
-
+import InterRegistrationForm from './Pages/InterVarsityCompReg.jsx';
 import Login from './Pages/Login.jsx';
 import BlogsHomePage from './Pages/Blogs Home.jsx'
 import AddExecMember from './Pages/AddExecMember.jsx';
@@ -37,6 +37,7 @@ const App = () => {
         <Route path="/showSelectedBlog" element={<ShowSelectedBlog/>} />
         <Route path="/admin/AddExecMember" element={<AddExecMember/>} />
         <Route path="/ExecMembers" element={<ExecutiveMembers/>} />
+        <Route path="/InterRegistration" element={<InterRegistrationForm/>} />
       </Routes>
       </BrowserRouter>
 
