@@ -23,7 +23,7 @@ export default function EventsAndAchievements() {
 
           <div className="col-sm-12 col-md-6 col-lg-4" key={event.ID}>
             <div className="card">
-              <img src="https://source.unsplash.com/random/?roses/400/200" alt={event.title} className="card-img-top" />
+              <img src="https://source.unsplash.com/random/?code/400/200" alt={event.title} className="card-img-top" />
               <div className="card-body">
                 <h5 className="card-title">{event.title}</h5>
                 <p className="card-text">{event.body.substring(0, 20)}...<br />

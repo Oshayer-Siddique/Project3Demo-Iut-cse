@@ -9,6 +9,7 @@ import InterRegistrationForm from './Pages/InterVarsityCompReg.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import BlogsHomePage from './Pages/Blogs Home.jsx'
+import { IntraVarsityComps } from './Pages/IntravarsityComps.jsx';
 import AddExecMember from './Pages/AddExecMember.jsx';
 import ExecutiveMembers from './Pages/ExecutiveMembers.jsx';
 import EventsAndAchievements from './Pages/EventsAndAchievements.jsx';
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/ExecMembers" element={<ExecutiveMembers/>} />
         <Route path="/InterRegistration" element={<InterRegistrationForm/>} />
         <Route path="/Events" element={<EventsAndAchievements/>} />
+        <Route path="IntraCompetitions" element={<IntraVarsityComps/>} />
       </Routes>
       </BrowserRouter>
 

@@ -32,7 +32,7 @@ function AddIntraComp(){
       };
 
     return (<div className='intra-reg-form'>
-    <h3>New Intra Uni Event</h3>
+    <h3>New Intra Uni Competition</h3>
     <form onSubmit={handleSubmit} aria-disabled>
       <div>
         <input placeholder='Title' type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
