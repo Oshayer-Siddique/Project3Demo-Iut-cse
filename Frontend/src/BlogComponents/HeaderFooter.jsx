@@ -5,9 +5,9 @@ const HeaderComponent =()=>{
       <nav id="navbar" className="navbar order-last order-lg-0">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a className="active" href="/about">About</a></li>
-          <li><a href="#">Courses</a></li>
-          <li><a href="#">Trainers</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blogs">Blogs</a></li>
+          <li><a href="/ExecMembers">Executive Members</a></li>
           <li><a href="#">Events</a></li>
           <li><a href="#">Pricing</a></li>
           <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></a>

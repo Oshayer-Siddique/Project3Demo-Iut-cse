@@ -28,7 +28,7 @@ const LoginForm = () => {
       .catch((error) => {
         console.error('Error saving information:', error);
         if(error.response)
-          setError("Incorrect username or password");
+          setError("There was an error");
         else
           setError('Could not connect to server');
         setName(formData.username)

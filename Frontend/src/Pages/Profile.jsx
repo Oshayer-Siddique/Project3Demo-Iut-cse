@@ -38,6 +38,7 @@ function UserProfile() {
       <a className="get-started-btn" href="#" onClick={()=>{
         setBlogWriter(true);
       }}>Add New Blog</a>
+      <a className="get-started-btn" href="/admin/AddExecMember" target='_blank'>Add New Exec Member</a>
 
       <BlogReader/>
       {showBlogWriter && <BlogWriter changeVisibility={setBlogWriter} />}
