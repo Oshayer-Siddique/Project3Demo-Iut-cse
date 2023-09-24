@@ -10,6 +10,7 @@
     background-color: #333;
     color:white;
     text-align: center;
+    z-index: 1000;
 }
 .BlogWriter textarea{
     resize:none;
@@ -20,8 +21,8 @@
 }
 
 .BlogReader{
-    background-color: rgb(212, 216, 212);
-    border: 1px solid black;
+    background-color: rgb(150, 176, 150);
+    border: 1px solid rgb(117, 70, 70);
     margin: 5px;
     max-width: 80vmin;
 }
@@ -61,4 +62,8 @@ a[href="#BlogPost"]{
 
 .BlogTitle:hover{
     background-color: white;
+}
+.pre{
+    white-space: pre-line;
+    padding:10px;
 }

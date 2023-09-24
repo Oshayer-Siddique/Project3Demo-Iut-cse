@@ -25,7 +25,42 @@ async function addmember(req,res,next){
 
 }
 
+
+
+async function search_member(req,res){
+    try{
+        const{name} = req.body;
+        const matchingmember = await Member.find(
+        {
+            name: {$regex: name, $options: "i"},
+            
+            
+        },"name post contact");
+
+        const matchingmembernames = matchingmember.map(members => members);
+        res.json(matchingmembernames);
+
+    }
+    catch(err){
+        res.status(500).send("An error happend in member search");
+    }
+}
+
+
+
+async function getmember(req,res){
+    try {
+        const members = await Member.find({}, "name post contact");
+        res.json(members);
+      } catch (err) {
+        res.status(500).json({ message: "Error in getting blog" });
+      }
+
+}
+
 module.exports = {
     addmember,
+    search_member,
+    getmember,
 }
 
