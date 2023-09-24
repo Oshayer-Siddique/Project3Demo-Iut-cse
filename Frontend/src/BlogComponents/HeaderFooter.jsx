@@ -1,7 +1,7 @@
 const HeaderComponent =()=>{
     return <header id="header" className="fixed-top">
     <div className="container d-flex align-items-center">
-      <h1 className="logo me-auto"><a href="/">Mentor</a></h1>
+      <h1 className="logo me-auto"><a href="/">IUT-CS</a></h1>
       <nav id="navbar" className="navbar order-last order-lg-0">
         <ul>
           <li><a href="/">Home</a></li>

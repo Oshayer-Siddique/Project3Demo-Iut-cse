@@ -6,7 +6,9 @@ import LoginForm from './Pages/LoginForm.jsx';
 import UserProfile from './Pages/Profile.jsx';
 import AboutPage from './Pages/About.jsx';
 
+
 import Login from './Pages/Login.jsx';
+import Register from './Pages/Register.jsx';
 import BlogsHomePage from './Pages/Blogs Home.jsx'
 import { ShowSelectedBlog } from './Pages/ShowSelectedBlog.jsx';
 import { HeaderComponent, FooterComponent } from './BlogComponents/HeaderFooter.jsx';
@@ -27,7 +29,7 @@ const App = () => {
         <Route index element={<BlogsHomePage/>} />
         <Route path="/admin/login" element={<Login/>} />
 
-        <Route path="/admin/register" element={<RegistrationForm/>} />
+        <Route path="/admin/register" element={<Register/>} />
         <Route path="/admin/profile/:username" element={<UserProfile/>} />
         <Route path="/about" element={<AboutPage/>} />
         <Route path="/blogs" element={<BlogsHomePage/>} />

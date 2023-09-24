@@ -49,8 +49,8 @@ const Login = () => {
 
                 <div className="d-flex justify-content-center py-4">
                   <a href="index.html" className="logo d-flex align-items-center w-auto">
-                    <img src="../src/assets/img/logo.png" alt="" />
-                    <span className="d-none d-lg-block">NiceAdmin</span>
+                    <img src="../src/assets/img/IUTCS.png" alt="" />
+
                   </a>
                 </div>
 
