@@ -32,7 +32,22 @@ async function IntraReg(req,res,next){
 
 
 
+async function getIntraReg(req,res){
+    try{
+        const compe1 = await COMPE1.find({},"title link");
+        res.json(compe1);
+
+
+    }
+    catch(err){
+        res.status(500).json({ message: "Error in getting Intra Compe" });
+    }
+}
+
+
+
 module.exports = {
     IntraReg,
+    getIntraReg,
 }
 
