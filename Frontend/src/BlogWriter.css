@@ -67,3 +67,11 @@ a[href="#BlogPost"]{
     white-space: pre-line;
     padding:10px;
 }
+
+.intra-reg-form{
+    padding: 10px;
+}
+.intra-reg-form input{
+    margin: 5px;
+    box-sizing: border-box;
+}

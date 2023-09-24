@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { BlogWriter } from '../BlogComponents/BlogWriter';
 import { BlogReader } from '../BlogComponents/BlogReader';
+import { AddIntraComp } from '../BlogComponents/AddIntraComp';
 
 function UserProfile() {
   const { username } = useParams();
@@ -20,6 +21,7 @@ function UserProfile() {
   //   );
 
   const [showBlogWriter, setBlogWriter] = useState(false);
+  const [showEventAdder, setEventAdder] = useState(false);
 
   return (
     <>
@@ -33,14 +35,23 @@ function UserProfile() {
         </div>
       </div>
 
-      <br/>
+      <br />
 
-      <a className="get-started-btn" href="#" onClick={()=>{
+      <a className="get-started-btn" href="#" onClick={() => {
         setBlogWriter(true);
       }}>Add New Blog</a>
       <a className="get-started-btn" href="/admin/AddExecMember" target='_blank'>Add New Exec Member</a>
 
-      <BlogReader/>
+      {!showEventAdder && <a className="get-started-btn" href="#" onClick={() => {
+        setEventAdder(true)
+      }}>Add New Event</a>}
+      {showEventAdder && <a className="get-started-btn" href="#" onClick={() => {
+        setEventAdder(false)
+      }}>Close</a>}
+
+      {showEventAdder && <AddIntraComp />}
+
+      <BlogReader />
       {showBlogWriter && <BlogWriter changeVisibility={setBlogWriter} />}
     </>
   );
