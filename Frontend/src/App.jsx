@@ -5,6 +5,7 @@ import RegistrationForm from './Pages/RegistrationForm.jsx';
 import LoginForm from './Pages/LoginForm.jsx';
 import UserProfile from './Pages/Profile.jsx';
 import AboutPage from './Pages/About.jsx';
+import Login from './Pages/Login.jsx';
 
 const App = () => {
   const [showBlogWriter, setBlogWriter] = useState(false);
@@ -14,8 +15,8 @@ const App = () => {
     <>
       <BrowserRouter>
       <Routes>
-        <Route index element={<LoginForm/>} />
-        <Route path="/admin/login" element={<LoginForm/>} />
+        <Route index element={<Login/>} />
+        <Route path="/admin/login" element={<Login/>} />
         <Route path="/admin/register" element={<RegistrationForm/>} />
         <Route path="/admin/profile/:username" element={<UserProfile/>} />
         <Route path="/about" element={<AboutPage/>} />
