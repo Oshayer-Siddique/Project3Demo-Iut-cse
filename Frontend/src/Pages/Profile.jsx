@@ -56,6 +56,10 @@ function UserProfile() {
         setEventAdder(true);
       }}>Add Events/Achievements</a>
 
+      <a className="get-started-btn" href="/admin/deleteblogs" target="_blank">Delete Blogs</a>
+      <a className="get-started-btn" href="/admin/deleteevents" target="_blank">Delete Events</a>
+
+
       {showCompAdder && <AddIntraComp />}
 
       <BlogReader />

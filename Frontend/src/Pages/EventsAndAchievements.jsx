@@ -16,7 +16,7 @@ export default function EventsAndAchievements() {
 
 
   return <div className="container">
-    <div className="row g-3">
+    <div className="row g-3"> <br /> <br />
       {
 
         Events.map(event => (

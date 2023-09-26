@@ -5,15 +5,12 @@ import RegistrationForm from './Pages/RegistrationForm.jsx';
 import LoginForm from './Pages/LoginForm.jsx';
 import UserProfile from './Pages/Profile.jsx';
 import AboutPage from './Pages/About.jsx';
-
-
-
-
 import InterRegistrationForm from './Pages/InterVarsityCompReg.jsx';
-
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import BlogsHomePage from './Pages/Blogs Home.jsx'
+import BlogDeleter from './Pages/BlogDeleter.jsx';
+import EventDeleter from './Pages/EventDeleter.jsx';
 import { IntraVarsityComps } from './Pages/IntravarsityComps.jsx';
 import AddExecMember from './Pages/AddExecMember.jsx';
 import ExecutiveMembers from './Pages/ExecutiveMembers.jsx';
@@ -49,7 +46,9 @@ const App = () => {
         <Route path="/ExecMembers" element={<ExecutiveMembers/>} />
         <Route path="/InterRegistration" element={<InterRegistrationForm/>} />
         <Route path="/Events" element={<EventsAndAchievements/>} />
-        <Route path="IntraCompetitions" element={<IntraVarsityComps/>} />
+        <Route path="/IntraCompetitions" element={<IntraVarsityComps/>} />
+        <Route path="/admin/deleteblogs" element={<BlogDeleter/>} />
+        <Route path="/admin/deleteevents" element={<EventDeleter/>} />
       </Routes>
       </BrowserRouter>
 

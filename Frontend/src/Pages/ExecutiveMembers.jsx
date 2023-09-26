@@ -4,31 +4,32 @@ import axios from 'axios';
 
 export default function ExecutiveMembers() {
   const [Members, setMembers] = useState([]);
+  const [searchWord, setSearch] = useState([]);
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:5050/iut-cse/getmember').then(res => {
-      // console.log(res)
-      let i = 0;
+    if (searchWord == "") {
+      axios.get('http://localhost:5050/iut-cse/getmember').then(res => {
+        // console.log(res)
+        let i = 0;
 
-      setMembers(res.data.map(mem => ({ name: mem.name, post: mem.post, contact:mem.contact, ID: i++})))
+        setMembers(res.data.map(mem => ({ name: mem.name, post: mem.post, contact: mem.contact, ID: i++ })))
 
-    })
-  }, [])
+      })
+    }
+    else {
+      const formData = { name: searchWord };
+      axios.post('http://localhost:5050/iut-cse/searchmember', formData)
+        .then((res) => {
+          let i = 0;
 
-
-  // return <>
-  // <div className="BlogReader">
-  //   <h1>Current Blogs</h1>
-  //   {
-  //     Blogs.map(b => (
-  //         <a href="#BlogPost"><div key={b.ID} className="BlogTitle" onClick={()=>{
-  //             setPost(b)
-  //         }}>{b.title}</div></a>
-  //     ))
-  //   }
-  //   </div>
-  // </>
+          setMembers(res.data.map(mem => ({ name: mem.name, post: mem.post, contact: mem.contact, ID: i++ })))
+        })
+        .catch((error) => {
+          console.error('Error sending information:\n', error);
+        });
+    }
+  }, [searchWord])
 
   return <div className="container">
 
@@ -39,8 +40,12 @@ export default function ExecutiveMembers() {
       </div>
     </div>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
+    <form className="d-flex">
+      <input type="search" className="form-control me-2" placeholder="Search..." value={searchWord} onChange={(e) => { setSearch(e.target.value) }} />
+    </form>
+    <br />
     <div className="row g-3">
       {
 
