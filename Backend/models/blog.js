@@ -19,6 +19,9 @@ const blogSchema = new mongoose.Schema({
     },
     uploader:{
         type: String,
+    },
+    imageUrl:{
+        type: String,
     }
 
 
