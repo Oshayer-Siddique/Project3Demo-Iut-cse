@@ -18,6 +18,8 @@ import EventsAndAchievements from './Pages/EventsAndAchievements.jsx';
 import { ShowSelectedBlog } from './Pages/ShowSelectedBlog.jsx';
 import { ShowSelectedEvent } from './Pages/ShowSelectedEvent.jsx';
 import { HeaderComponent, FooterComponent } from './BlogComponents/HeaderFooter.jsx';
+import AdminPage from './Pages/Admin.jsx';
+import ExecutiveComponent from './components/Executive.jsx';
 
 import CustomNavbar from './components/Header'
 import HomePage from './Pages/HomePage';
@@ -34,21 +36,30 @@ const App = () => {
       <Routes>
 
         <Route index element={<HomePage/>} />
-        {/* <Route path="/admin/login" element={<Login/>} />
-
-        <Route path="/admin/register" element={<Register/>} />
-        <Route path="/admin/profile/:username" element={<UserProfile/>} />
-        <Route path="/about" element={<AboutPage/>} />
         <Route path="/blogs" element={<BlogsHomePage/>} />
+        <Route path="/admin/profile/:username" element={<UserProfile/>} />
+        <Route path="/admin/deleteblogs" element={<BlogDeleter/>} />
+        <Route path="/members" element={<ExecutiveMembers/>} />
         <Route path="/showSelectedBlog" element={<ShowSelectedBlog/>} />
-        <Route path="/showSelectedEvent" element={<ShowSelectedEvent/>} />
+        <Route path="/admin/login" element={<Login/>} />
         <Route path="/admin/AddExecMember" element={<AddExecMember/>} />
-        <Route path="/ExecMembers" element={<ExecutiveMembers/>} />
         <Route path="/InterRegistration" element={<InterRegistrationForm/>} />
         <Route path="/Events" element={<EventsAndAchievements/>} />
         <Route path="/IntraCompetitions" element={<IntraVarsityComps/>} />
-        <Route path="/admin/deleteblogs" element={<BlogDeleter/>} />
-        <Route path="/admin/deleteevents" element={<EventDeleter/>} /> */}
+        <Route path="/showSelectedEvent" element={<ShowSelectedEvent/>} />
+        <Route path="/admin/deleteevents" element={<EventDeleter/>} />
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         
       </Routes>
       </BrowserRouter>
     </div>

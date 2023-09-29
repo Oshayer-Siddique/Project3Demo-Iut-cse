@@ -10,6 +10,7 @@ const fs = require("fs");
 const Blog = require("../models/blog");
 //const { search } = require("../router/IntraRegRouter");
 
+
 async function uploadBlog(req, res, next) {
   const { title, body } = req.body;
   try {
@@ -34,7 +35,7 @@ async function uploadBlog(req, res, next) {
 
 async function getblogs(req, res) {
   try {
-    const blogs = await Blog.find({}, "title body");
+    const blogs = await Blog.find({}, "title body uploadTime");
     res.json(blogs);
   } catch (err) {
     res.status(500).json({ message: "Error in getting blog" });
