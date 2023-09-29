@@ -19,22 +19,22 @@ import { ShowSelectedBlog } from './Pages/ShowSelectedBlog.jsx';
 import { ShowSelectedEvent } from './Pages/ShowSelectedEvent.jsx';
 import { HeaderComponent, FooterComponent } from './BlogComponents/HeaderFooter.jsx';
 
+import CustomNavbar from './components/Header'
+import HomePage from './Pages/HomePage';
 
 const App = () => {
   //const [showBlogWriter, setBlogWriter] = useState(false);
 
   
   return (
-    <>
+    <div>
+      <CustomNavbar/>
       
-      <HeaderComponent />
-      <br/><br/><br/>
       <BrowserRouter>
       <Routes>
 
-
-        <Route index element={<AboutPage/>} />
-        <Route path="/admin/login" element={<Login/>} />
+        <Route index element={<HomePage/>} />
+        {/* <Route path="/admin/login" element={<Login/>} />
 
         <Route path="/admin/register" element={<Register/>} />
         <Route path="/admin/profile/:username" element={<UserProfile/>} />
@@ -48,16 +48,13 @@ const App = () => {
         <Route path="/Events" element={<EventsAndAchievements/>} />
         <Route path="/IntraCompetitions" element={<IntraVarsityComps/>} />
         <Route path="/admin/deleteblogs" element={<BlogDeleter/>} />
-        <Route path="/admin/deleteevents" element={<EventDeleter/>} />
+        <Route path="/admin/deleteevents" element={<EventDeleter/>} /> */}
       </Routes>
       </BrowserRouter>
-
-      <FooterComponent/>
-
-    </>
+    </div>
   );
 };
 
-export default App;
+export default App
 
 

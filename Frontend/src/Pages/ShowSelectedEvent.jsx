@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "../BlogWriter.css";
+
 
 export function ShowSelectedEvent() {
     let navigate = useNavigate();

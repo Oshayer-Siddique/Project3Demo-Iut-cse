@@ -1,0 +1,100 @@
+/* Navbar.css */
+.custom-navbar {
+  background-color: #000615;
+  padding: 20px 0;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Customize the toggle button */
+.custom-navbar .navbar-toggler-icon {
+  background-color: transparent;
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-toggler-icon::before,
+.custom-navbar .navbar-toggler-icon::after {
+  content: '';
+  display: block;
+  background-color: #fff;
+  height: 3px;
+  width: 30px;
+  border-radius: 3px;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-toggler-icon::before {
+  transform: translateY(-8px);
+}
+
+.custom-navbar .navbar-toggler-icon::after {
+  transform: translateY(8px);
+}
+
+.custom-navbar .navbar-toggler:hover .navbar-toggler-icon::before,
+.custom-navbar .navbar-toggler:hover .navbar-toggler-icon::after {
+  background-color: #ff5733; /* Change color on hover */
+}
+
+.custom-navbar .navbar-nav {
+  align-items: center;
+}
+
+.custom-navbar .nav-link {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 15px;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #ff5733;
+  transform: scale(1.1); /* Enlarge on hover */
+}
+
+/* Style the dropdown text */
+.custom-navbar .navbar-nav .nav-item.dropdown .dropdown-menu {
+  background-color: #000615;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  width: 180px; /* Adjust width as needed */
+}
+
+.custom-navbar .navbar-nav .nav-item.dropdown .dropdown-item {
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-nav .nav-item.dropdown .dropdown-item:hover {
+  background-color: #ff5733;
+  color: #fff;
+}
+
+.custom-navbar .navbar-nav .nav-item.dropdown .dropdown-divider {
+  background-color: #fff;
+  margin: 0;
+}
