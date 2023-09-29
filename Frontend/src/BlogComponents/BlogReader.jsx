@@ -1,18 +1,38 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { motion, useAnimation } from 'framer-motion';
+import '/src/assets/css/BlogComponent.css';
+
+
+function format(string){
+  return string.slice(7,13);
+}
 
 export function BlogReader() {
   const [Blogs, setBlogs] = useState([]);
   const [searchWord, setSearch] = useState([]);
   let navigate = useNavigate();
 
+  const controls = useAnimation();
+  const blogsPerRow = 3;
+
   useEffect(() => {
+
+    
+
+    // Animate the "Latest Blogs" title and cards
+    controls.start({
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5 },
+    });
+
     if (searchWord == "") {
       axios.get('http://localhost:5050/iut-cse/getblog').then(res => {
         // console.log(res)
         let i = 0;
-        setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body })))
+        setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body, time: b.uploadTime })))
       })
     }
     else {
@@ -20,7 +40,7 @@ export function BlogReader() {
       axios.post('http://localhost:5050/iut-cse/searchblog', formData)
         .then((res) => {
           let i = 0;
-          setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body })))
+          setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body, time: b.uploadTime  })))
         })
         .catch((error) => {
           console.error('Error sending information:\n', error);
@@ -28,6 +48,77 @@ export function BlogReader() {
 
     }
   }, [searchWord]);
+
+  return (
+    <div className="blog-container">
+      <motion.div
+        className="blogs-header"
+        initial={{ opacity: 0 }}
+        animate={controls}
+      >
+        <h1>Blogs</h1>
+        <br/>
+        <br/>
+        <div className="underline"></div>
+      </motion.div>
+
+      <form className="search-bar">
+        <input
+          type="search"
+          className="form-control"
+          placeholder="Search..."
+          value={searchWord}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
+      </form>
+
+      <div className="blog-cards">
+        {Blogs.map((blog, index) => (
+          <motion.div
+            className="blog-card"
+            key={blog.ID}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 * index }}
+          >
+            <img
+              src='/src/assets/iut_cs_black.jpg' // Replace with the actual image URL
+              alt={`Blog Image ${blog.ID}`}
+              className="blog-image"
+            />
+            <div className="blog-card-details">
+              <br/>
+              <h2 className="blog-card-title">{blog.title}</h2>
+              <p className="author-date">
+                <span className="author">Author Name</span> {' '}
+                <br/>
+                <span className="date">{blog.time.substring(11,19)} | {blog.time.substring(0,10)} </span>
+              </p>
+              <p className="blog-content">
+                {blog.body.substring(0, 50)}...
+              </p>
+              <a
+                href=""
+                onClick={(e) => {
+                  e.preventDefault();
+                  sessionStorage.setItem('title', blog.title);
+                  sessionStorage.setItem('body', blog.body);
+                  navigate('/showSelectedBlog');
+                }}
+                className="read-more-link"
+              >
+                Read More
+              </a>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+
+
 
 
   return <section id="about" className="about">

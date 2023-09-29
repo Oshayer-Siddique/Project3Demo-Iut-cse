@@ -26,51 +26,7 @@ const upload = multer({ storage }).single("image");
 
 
 
-//const { search } = require("../router/IntraRegRouter");
 
-// async function uploadBlog(req, res, next) {
-//   const { title, body } = req.body;
-//   try {
-//     // let authorization = req.cookies[process.env.COOKIE_NAME];
-//     // const decoded = jwt.verify(authorization,process.env.secret_key);
-//     // const uploadername = decoded.username;
-
-//     //const uploader = uploadername;
-//     //res.send(uploadername);
-
-//     const newBlog = new Blog({
-//       title,
-//       body,
-//     });
-//     await newBlog.save();
-//     res.send("Data Saved");
-//     next();
-//   } catch (err) {
-//     res.send(err);
-//   }
-// }
-
-
-// const uploadBlog = async(req,res) =>{
-//   await upload(req,res,(err) =>{
-//     if(err){
-//       res.send("File upload fail");
-//     }
-//     const {title,body} = req.body;
-//     const imageUrl = `http://localhost:5050/uploads/${req.file.filename}`;
-    
-//       const newBlog = new Blog({
-//         title,
-//         body,
-//         imageUrl,
-//       });
-//       await newBlog.save();
-
-
-    
-    
-
-//   }}
 
 const uploadBlog = async(req,res) =>{
   await upload(req,res,(err) =>{
@@ -96,7 +52,7 @@ const uploadBlog = async(req,res) =>{
 
 async function getblogs(req, res) {
   try {
-    const blogs = await Blog.find({}, "title body");
+    const blogs = await Blog.find({}, "title body uploadTime");
     res.json(blogs);
   } catch (err) {
     res.status(500).json({ message: "Error in getting blog" });

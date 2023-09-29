@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
+import "/src/assets/css/Login.css"
 
 
 const Login = () => {
@@ -35,7 +36,42 @@ const Login = () => {
         // Optionally, display an error message or handle errors here
       });
   };
-
+  return (
+    <div className="login-container">
+      <div className="login-card">
+        <h1 className="login-heading">Login</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="username" className="form-label">Username</label>
+            <input
+              type="text"
+              id="username"
+              className="form-input"
+              value={username}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password" className="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              className="form-input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <button type="submit" className="login-button">Login</button>
+          <p className="register-link">
+            Don't have an account? <Link to="/admin/register">Create one</Link>
+          </p>
+        </form>
+      </div>
+    </div>
+  );
   return (
 
     <main>

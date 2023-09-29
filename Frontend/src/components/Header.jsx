@@ -26,8 +26,8 @@ function CustomNavbar() {
               <Nav.Link href="/members">Members</Nav.Link>
               <Nav.Link href="/events">Events</Nav.Link>
               <NavDropdown title="Competitions">
-                <NavDropdown.Item href="/intra-university">Intra University</NavDropdown.Item>
-                <NavDropdown.Item href="/inter-university">Inter University</NavDropdown.Item>
+                <NavDropdown.Item href="/IntraCompetitions">Intra University</NavDropdown.Item>
+                <NavDropdown.Item href="/InterRegistration">Inter University</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

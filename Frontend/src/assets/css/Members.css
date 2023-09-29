@@ -1,0 +1,117 @@
+/* ExecutiveMembers.css */
+
+.executive-members-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .breadcrumbs {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .breadcrumbs h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .breadcrumbs p {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.5;
+  }
+  
+  .search-form {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .executive-members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .executive-member-card {
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .executive-member-image {
+    width: 100%;
+    height: 500px; /* Set a fixed height for the image */
+    max-height: 100%; /* Ensure the image doesn't exceed its container */
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+  }
+  
+  .executive-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    aspect-ratio: 4/5; /* Adjust aspect ratio to make it taller (5:4) */
+  }
+  
+  .executive-member-details {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .executive-member-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .executive-member-post {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .executive-member-contact {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .executive-member-contact a {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .executive-member-contact a:hover {
+    color: #0056b3;
+  }
+  
+  .executive-member-card:hover {
+    transform: scale(1.05);
+  }
+  
