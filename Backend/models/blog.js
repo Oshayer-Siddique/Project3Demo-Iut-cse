@@ -13,10 +13,7 @@ const blogSchema = new mongoose.Schema({
         type: Date,
         default:Date.now,
     },
-    updateTime:{
-        type:Date,
-        default:Date.now,
-    },
+
     uploader:{
         type: String,
     },

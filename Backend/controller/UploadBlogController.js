@@ -44,6 +44,7 @@ const uploadBlog = async(req,res) =>{
     
     newBlog.save();
     res.send("Successfull")
+    //console.log(imageUrl);
 
   })
 
