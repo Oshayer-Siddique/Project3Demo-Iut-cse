@@ -8,12 +8,15 @@ const path = require('path');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const app = express();
+dotenv.config();
 
+const mongourl = process.env.DB;
+//console.log(mongourl);
 
 
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/Project3", {
+  .connect(mongourl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -32,7 +35,7 @@ app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
-dotenv.config();
+
 
 
 // app.get('/',async(req,res)=>{
@@ -46,7 +49,10 @@ dotenv.config();
 
 //     }
 // })
+app.get('/',(req,res)=>{
+  res.send("Is IT OKK::??");
 
+})
 const RegisterRouter = require('./router/RegisterRouter');
 const LoginRouter = require('./router/LoginRouter');
 const UploadBlogRouter = require('./router/UploadBlogRouter');
