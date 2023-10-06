@@ -11,12 +11,13 @@ const fs = require("fs");
 const Member = require("../models/member");
 
 async function addmember(req,res,next){
-    const {name,post,contact} = req.body;
+    const {name,post,contact,imageUrl} = req.body;
 
     const newMember = new Member({
         name,
         post,
         contact,
+        imageUrl,
     })
 
     await newMember.save();
@@ -50,7 +51,7 @@ async function search_member(req,res){
 
 async function getmember(req,res){
     try {
-        const members = await Member.find({}, "name post contact");
+        const members = await Member.find({}, "name post contact imageUrl");
         res.json(members);
       } catch (err) {
         res.status(500).json({ message: "Error in getting blog" });

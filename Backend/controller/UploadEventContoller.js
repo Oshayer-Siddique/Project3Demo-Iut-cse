@@ -12,12 +12,13 @@ const Event = require("../models/event");
 
 
 async function uploadEvent(req,res,next){
-    const {title,body} = req.body;
+    const {title,body,imageUrl} = req.body;
 
     try{
         const newEvent = new Event({
             title,
             body,
+            imageUrl,
 
         });
         await newEvent.save();
@@ -36,7 +37,7 @@ async function uploadEvent(req,res,next){
 
 async function getEvents(req,res){
     try{
-        const events = await Event.find({},"title body");
+        const events = await Event.find({},"title body imageUrl");
         res.json(events);
     }
     catch(err){
