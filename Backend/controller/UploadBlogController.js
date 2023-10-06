@@ -34,15 +34,15 @@ const uploadBlog = async(req,res) =>{
       res.send("File Upload Fail");
     }
     const {title,body} = req.body;
-    const imageUrl = `http://localhost:5050/UPLOAD_FOLDER/${req.file.filename}`;
+    
     const newBlog = new Blog({
       title,
       body,
-      imageUrl,
+      
     });
     
     newBlog.save();
-    res.send(imageUrl);
+    res.send("Seccuessful");
 
   })
 

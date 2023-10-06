@@ -17,6 +17,7 @@ import ExecutiveMembers from './Pages/ExecutiveMembers.jsx';
 import EventsAndAchievements from './Pages/EventsAndAchievements.jsx';
 import { ShowSelectedBlog } from './Pages/ShowSelectedBlog.jsx';
 import { ShowSelectedEvent } from './Pages/ShowSelectedEvent.jsx';
+import { BlogWriter } from './BlogComponents/BlogWriter.jsx';
 import { HeaderComponent, FooterComponent } from './BlogComponents/HeaderFooter.jsx';
 import AdminPage from './Pages/Admin.jsx';
 import ExecutiveComponent from './components/Executive.jsx';
@@ -39,6 +40,7 @@ const App = () => {
         <Route path="/blogs" element={<BlogsHomePage/>} />
         <Route path="/admin/profile/:username" element={<UserProfile/>} />
         <Route path="/admin/deleteblogs" element={<BlogDeleter/>} />
+        <Route path="/admin/writeblogs" element={<BlogWriter/>} />
         <Route path="/members" element={<ExecutiveMembers/>} />
         <Route path="/showSelectedBlog" element={<ShowSelectedBlog/>} />
         <Route path="/admin/login" element={<Login/>} />

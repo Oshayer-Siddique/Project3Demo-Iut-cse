@@ -2,52 +2,75 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function BlogWriter(props){
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
-    const [message, setMessage] = useState('');
+function BlogWriter() {
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+  const [message, setMessage] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-      
-        const formData = { title, body };
-        setMessage('Please Wait');
-      
-        axios.post('http://localhost:5050/iut-cse/admin/uploadblog', formData)
-          .then((response) => {
-            console.log(response);
-            console.log("Blog Sent");
-            if(response.data){
-                setMessage(response.data)
-                setTitle('')
-                setBody('')
-            }
-            else{
-                setMessage("Server Error")
-            }
-          })
-          .catch((error) => {
-            console.error('Error sending information:\n', error);
-            setMessage("Server Error")
-          });
-      };
+  const width = 400, height = 300;
 
-    return (<div className='BlogWriter'>
-    <h1>New Blog</h1>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = { title, body };
+    setMessage('Please Wait');
+
+    axios.post('http://localhost:5050/iut-cse/admin/uploadblog', formData)
+      .then((response) => {
+        console.log(response);
+        console.log("Blog Sent");
+        if (response.data) {
+          setMessage(response.data)
+          setTitle('')
+          setBody('')
+        }
+        else {
+          setMessage("Server Error")
+        }
+      })
+      .catch((error) => {
+        console.error('Error sending information:\n', error);
+        setMessage("Server Error")
+      });
+  };
+
+  const imgUpload = () => {
+    let image = new Image();
+    let cnv = document.getElementById("imgCanvas");
+    let ctx = cnv.getContext("2d");
+    let f = document.querySelector("input[type='file']").files[0], url = window.URL || window.webkitURL, src = url.createObjectURL(f);
+    image.src = src;
+    image.onload = function () {
+      url.revokeObjectURL(src);
+      ctx.drawImage(image, 0, 0, width, height);
+      setTimeout(() => { console.log(cnv.toDataURL()) }, 70);
+    }
+
+
+  }
+
+
+  return (<div className='container'>
+    <h1 className="text-center">New Blog</h1>
     <form onSubmit={handleSubmit} aria-disabled>
-      <div>
-        <input placeholder='Title' type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
+      <div className="text-center">
+        <canvas className="border" id="imgCanvas" width={width} height={height}></canvas>
       </div>
-      <div>
-        <textarea placeholder='Enter blog body' name='body' value={body} onChange={(e) => setBody(e.target.value)} required></textarea>
+      <div className="form-group">
+        <input className="form-control" placeholder='Title' type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required />
       </div>
-      {message && <div>{message}</div>}
-      <button type="submit">Submit</button>
-      <button type="button" onClick={()=>{
-        props.changeVisibility(false);
-      }}>Close</button><br/>
+      <div className="form-group">
+        <textarea className="form-control" placeholder='Enter blog body' name='body' value={body} onChange={(e) => setBody(e.target.value)} required></textarea>
+      </div>
+      <div className="form-group">
+        <input className="form-control" type="file" onInput={imgUpload} required />
+      </div>
+      {message && <div className='text-center'>{message}</div>}
+      <div className="form-group text-center">
+        <button type="submit" className="btn btn-success">Submit</button>
+      </div>
     </form>
   </div>);
 }
 
-export {BlogWriter};
+export { BlogWriter };

@@ -8,8 +8,6 @@ import { EventWriter } from '../BlogComponents/EventWriter';
 
 function UserProfile() {
   const { username } = useParams();
-
-  const [showBlogWriter, setBlogWriter] = useState(false);
   const [showCompAdder, setCompAdder] = useState(false);
   const [showEventAdder, setEventAdder] = useState(false);
 
@@ -18,12 +16,12 @@ function UserProfile() {
       <div className="header">
         <div className="container">
           <h2>Welcome, {username}</h2>
-          
+
         </div>
       </div>
 
       <div className="buttons">
-        <button className="btn" onClick={() => setBlogWriter(true)}>Add New Blog</button>
+        <a className="btn" href="/admin/writeblogs" target='_blank'>New Blog</a>
         <a className="btn" href="/admin/AddExecMember" target='_blank'>Add New Exec Member</a>
         {!showCompAdder && (
           <button className="btn" onClick={() => setCompAdder(true)}>Add New Competition</button>
@@ -37,7 +35,6 @@ function UserProfile() {
       </div>
 
       {showCompAdder && <AddIntraComp />}
-      {showBlogWriter && <BlogWriter changeVisibility={setBlogWriter} />}
       {showEventAdder && <EventWriter changeVisibility={setEventAdder} />}
     </div>
   );
