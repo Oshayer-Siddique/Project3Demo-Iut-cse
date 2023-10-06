@@ -43,6 +43,8 @@ const uploadBlog = async(req,res) =>{
     });
     
     newBlog.save();
+    //res.send(newBlog);
+    console.log(imageUrl);
     res.send("Successfull")
 
   })
@@ -53,7 +55,7 @@ const uploadBlog = async(req,res) =>{
 
 async function getblogs(req, res) {
   try {
-    const blogs = await Blog.find({}, "title body  imageUrl uploadTime");
+    const blogs = await Blog.find({}, "title body imageUrl uploadTime");
     res.json(blogs);
   } catch (err) {
     res.status(500).json({ message: "Error in getting blog" });

@@ -5,14 +5,15 @@ import axios from 'axios';
 function BlogWriter() {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [imageUrl, setURL] = useState('');
   const [message, setMessage] = useState('');
 
-  const width = 400, height = 300;
+  const width = 100, height = 60;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const formData = { title, body };
+    const formData = { title, body, imageUrl };
+    console.log(formData)
     setMessage('Please Wait');
 
     axios.post('http://localhost:5050/iut-cse/admin/uploadblog', formData)
@@ -35,15 +36,26 @@ function BlogWriter() {
   };
 
   const imgUpload = () => {
-    let image = new Image();
-    let cnv = document.getElementById("imgCanvas");
-    let ctx = cnv.getContext("2d");
-    let f = document.querySelector("input[type='file']").files[0], url = window.URL || window.webkitURL, src = url.createObjectURL(f);
-    image.src = src;
-    image.onload = function () {
-      url.revokeObjectURL(src);
-      ctx.drawImage(image, 0, 0, width, height);
-      setTimeout(() => { console.log(cnv.toDataURL()) }, 70);
+    try {
+      let image = new Image();
+      let cnv = document.getElementById("imgCanvas");
+      let ctx = cnv.getContext("2d");
+      ctx.fillStyle = "black";
+      let f = document.querySelector("input[type='file']").files[0], url = window.URL || window.webkitURL, src = url.createObjectURL(f);
+      image.src = src;
+      setMessage("Incorrect file format");
+      ctx.fillRect(0, 0, width, height);
+      image.onload = function () {
+        url.revokeObjectURL(src);
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(image, 0, 0, width, height);
+        setMessage("");
+        setTimeout(() => { setURL(cnv.toDataURL()) }, 70);
+      }
+    }
+    catch (err) {
+      setMessage("Incorrect file format");
+      console.log("Error in image");
     }
 
 

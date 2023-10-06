@@ -32,7 +32,8 @@ export function BlogReader() {
       axios.get('http://localhost:5050/iut-cse/getblog').then(res => {
         // console.log(res)
         let i = 0;
-        setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body, time: b.uploadTime })))
+        setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body, time: b.uploadTime, imgURL: b.imageUrl })))
+        //console.log(b.imageUrl);
       })
     }
     else {
@@ -40,7 +41,7 @@ export function BlogReader() {
       axios.post('http://localhost:5050/iut-cse/searchblog', formData)
         .then((res) => {
           let i = 0;
-          setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body, time: b.uploadTime  })))
+          setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body, time: b.uploadTime, imgURL: b.imageUrl  })))
         })
         .catch((error) => {
           console.error('Error sending information:\n', error);
@@ -84,7 +85,7 @@ export function BlogReader() {
             transition={{ duration: 0.5, delay: 0.2 * index }}
           >
             <img
-              src='/src/assets/iut_cs_black.jpg' // Replace with the actual image URL
+              src={`${blog.imgURL}`} // Replace with the actual image URL
               alt={`Blog Image ${blog.ID}`}
               className="blog-image"
             />
