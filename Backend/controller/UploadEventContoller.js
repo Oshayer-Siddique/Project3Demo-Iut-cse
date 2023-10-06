@@ -37,7 +37,7 @@ async function uploadEvent(req,res,next){
 
 async function getEvents(req,res){
     try{
-        const events = await Event.find({},"title body");
+        const events = await Event.find({},"title body imageUrl");
         res.json(events);
     }
     catch(err){
