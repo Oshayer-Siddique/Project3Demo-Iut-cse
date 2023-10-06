@@ -33,16 +33,17 @@ const uploadBlog = async(req,res) =>{
     if(err){
       res.send("File Upload Fail");
     }
-    const {title,body} = req.body;
-    const imageUrl = `http://localhost:5050/UPLOAD_FOLDER/${req.file.filename}`;
+    const {title,body,imageUrl} = req.body;
+    
     const newBlog = new Blog({
       title,
       body,
       imageUrl,
+      
     });
     
     newBlog.save();
-    res.send(imageUrl);
+    res.send("Successfull")
 
   })
 
@@ -52,7 +53,7 @@ const uploadBlog = async(req,res) =>{
 
 async function getblogs(req, res) {
   try {
-    const blogs = await Blog.find({}, "title body uploadTime");
+    const blogs = await Blog.find({}, "title body  imageUrl uploadTime");
     res.json(blogs);
   } catch (err) {
     res.status(500).json({ message: "Error in getting blog" });

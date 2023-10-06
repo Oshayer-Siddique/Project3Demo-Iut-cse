@@ -11,12 +11,13 @@ const fs = require("fs");
 const Member = require("../models/member");
 
 async function addmember(req,res,next){
-    const {name,post,contact} = req.body;
+    const {name,post,contact,imageUrl} = req.body;
 
     const newMember = new Member({
         name,
         post,
         contact,
+        imageUrl,
     })
 
     await newMember.save();

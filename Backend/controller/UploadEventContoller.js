@@ -12,12 +12,13 @@ const Event = require("../models/event");
 
 
 async function uploadEvent(req,res,next){
-    const {title,body} = req.body;
+    const {title,body,imageUrl} = req.body;
 
     try{
         const newEvent = new Event({
             title,
             body,
+            imageUrl,
 
         });
         await newEvent.save();

@@ -13,6 +13,9 @@ const memberSchema = new mongoose.Schema({
         type: String,
         
     },
+    imagUrl:{
+        type:String,
+    }
 
 
 
