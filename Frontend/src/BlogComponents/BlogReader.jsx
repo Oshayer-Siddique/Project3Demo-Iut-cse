@@ -106,6 +106,7 @@ export function BlogReader() {
                   e.preventDefault();
                   sessionStorage.setItem('title', blog.title);
                   sessionStorage.setItem('body', blog.body);
+                  sessionStorage.setItem('imgURL', blog.imgURL);
                   navigate('/showSelectedBlog');
                 }}
                 className="read-more-link"

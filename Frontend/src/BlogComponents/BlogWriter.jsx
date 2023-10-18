@@ -8,10 +8,12 @@ function BlogWriter() {
   const [imageUrl, setURL] = useState('');
   const [message, setMessage] = useState('');
 
-  const width = 100, height = 60;
+  const width = 150;
+  const height = width;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setURL("Hello World");
     const formData = { title, body, imageUrl };
     console.log(formData)
     setMessage('Please Wait');
@@ -47,8 +49,20 @@ function BlogWriter() {
       ctx.fillRect(0, 0, width, height);
       image.onload = function () {
         url.revokeObjectURL(src);
-        ctx.clearRect(0, 0, width, height);
-        ctx.drawImage(image, 0, 0, width, height);
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, width, height);
+        ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
+        if(image.width > image.height){
+          ctx.drawImage(image, (width - (image.width/image.height) * width)/2, 0, (image.width/image.height) * width, height);
+          ctx.fillRect(0, 0, width, height);
+          ctx.drawImage(image, 0, (height - (image.height/image.width) * height)/2, width, (image.height/image.width) * height);
+        }
+        else{
+          ctx.drawImage(image, 0, (height - (image.height/image.width) * height)/2, width, (image.height/image.width) * height);
+          ctx.fillRect(0, 0, width, height);
+          ctx.drawImage(image, (width - (image.width/image.height) * width)/2, 0, (image.width/image.height) * width, height);
+        }
+        
         setMessage("");
         setTimeout(() => { setURL(cnv.toDataURL()) }, 70);
       }
