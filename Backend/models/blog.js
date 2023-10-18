@@ -18,6 +18,7 @@ const blogSchema = new mongoose.Schema({
         type: String,
     },
     imageUrl:{
+
         type:String,
     }
 

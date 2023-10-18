@@ -13,6 +13,14 @@ export function ShowSelectedBlog() {
         </div>
         <br />
 
+        <div className="container">
+            <div className="text-center">
+                <img src={`${sessionStorage.getItem('imgURL')}`} className="img-thumbnail"/>
+            </div>
+        </div>
+
+        <br/>
+
         <div className="card w-100 ">
             <div className="card">
                 <div className="card-body">
@@ -25,11 +33,11 @@ export function ShowSelectedBlog() {
 
 
         <div>
-            <div className = "text-center">
-            <a className="get-started-btn " href="#" onClick={() => {
-                navigate(-1);
-            }}>Go Back</a>
-                </div>
+            <div className="text-center">
+                <a className="get-started-btn " href="#" onClick={() => {
+                    navigate(-1);
+                }}>Go Back</a>
+            </div>
         </div>
 
     </>
