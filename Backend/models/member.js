@@ -13,7 +13,7 @@ const memberSchema = new mongoose.Schema({
         type: String,
         
     },
-    imagUrl:{
+    imageUrl:{
         type:String,
     }
 

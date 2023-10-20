@@ -34,7 +34,7 @@ export default function EventDeleter() {
                     Events.map(event => (
 
                         <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" key={i++}>
-                            <h3>{event}<button type="button" onClick={() => { DeleteEvent(event) }}>x</button></h3>
+                            <h3>{event}<button type="button" className="btn btn-danger" onClick={() => { DeleteEvent(event) }}>🗑</button></h3>
                         </div>
                     ))
                 }

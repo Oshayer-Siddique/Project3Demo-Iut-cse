@@ -36,7 +36,7 @@ async function search_member(req,res){
             name: {$regex: name, $options: "i"},
             
             
-        },"name post contact");
+        },"name post contact imageUrl");
 
         const matchingmembernames = matchingmember.map(members => members);
         res.json(matchingmembernames);

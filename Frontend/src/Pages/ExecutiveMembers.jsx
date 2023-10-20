@@ -54,7 +54,7 @@ export default function ExecutiveMembers() {
           <div className="executive-member-card" key={index}>
             <div className="executive-member-image">
               <img
-                src={`https://source.unsplash.com/random/?executive/${mem.ID}`}
+                src={mem.imageUrl}
                 alt={mem.name}
               />
             </div>

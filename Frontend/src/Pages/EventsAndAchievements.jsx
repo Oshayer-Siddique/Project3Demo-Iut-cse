@@ -10,7 +10,7 @@ export default function EventsAndAchievements() {
   useEffect(() => {
     axios.get('http://localhost:5050/iut-cse/getevent').then(res => {
       let i = 0;
-      setEvents(res.data.map(event => ({ title: event.title, body: event.body, ID: i++ })))
+      setEvents(res.data.map(event => ({ title: event.title, body: event.body, ID: i++, url: event.imageUrl })))
     })
   }, [])
 
@@ -34,7 +34,7 @@ export default function EventsAndAchievements() {
           <div className="col-sm-12 col-md-6 col-lg-4" key={event.ID}>
             <div className="events-card">
               <div className="events-image">
-                <img src="https://source.unsplash.com/random/?code/400/200" alt={event.title} className="card-img-top" />
+                <img src={event.url} alt={event.title} className="card-img-top" />
               </div>
               <div className="events-details">
                 <h5 className="card-title">{event.title}</h5>
@@ -42,6 +42,7 @@ export default function EventsAndAchievements() {
                   <a href="#" onClick={() => {
                     sessionStorage.setItem('eventtitle', event.title);
                     sessionStorage.setItem('eventbody', event.body);
+                    sessionStorage.setItem('eventurl', event.url);
                     navigate('/showSelectedEvent');
                   }}>Read More</a>
                 </p>

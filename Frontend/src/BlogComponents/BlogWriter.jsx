@@ -13,7 +13,7 @@ function BlogWriter() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setURL("Hello World");
+    //setURL("Hello World");
     const formData = { title, body, imageUrl };
     console.log(formData)
     setMessage('Please Wait');

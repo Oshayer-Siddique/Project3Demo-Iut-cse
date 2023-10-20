@@ -4,8 +4,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f0f0f0;
+    flex-direction: row;
   }
   
   .admin-component {
@@ -18,6 +19,15 @@
     cursor: pointer;
     width: 200px;
     margin: 0 20px;
+  }
+
+  @media (max-width: 800px) {
+    .admin-container {
+      flex-direction: column;
+    }
+    .admin-component{
+      margin: 20px;
+    }
   }
   
   .component-header {

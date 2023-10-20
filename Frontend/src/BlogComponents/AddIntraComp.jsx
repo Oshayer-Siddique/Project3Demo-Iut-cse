@@ -31,17 +31,17 @@ function AddIntraComp(){
           });
       };
 
-    return (<div className='intra-reg-form'>
-    <h3>New Intra Uni Competition</h3>
+    return (<div className='container'>
+    <h2 className="text-center">New Intra Uni Competition</h2>
     <form onSubmit={handleSubmit} aria-disabled>
-      <div>
-        <input placeholder='Title' type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
+      <div className="form-group">
+        <input className="form-control" placeholder='Title' type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required/>
       </div>
-      <div>
-        <input placeholder='Google Form Link' name='link' value={link} onChange={(e) => setLink(e.target.value)} required/>
+      <div className="form-group">
+        <input className="form-control" placeholder='Google Form Link' name='link' value={link} onChange={(e) => setLink(e.target.value)} required/>
       </div>
-      <div>
-        <button type="submit">Submit</button>
+      <div className="form-group text-center"> 
+        <button type="submit" className="btn btn-success">Submit</button>
       </div>
       {message && <div>{message}</div>}
       <br/>

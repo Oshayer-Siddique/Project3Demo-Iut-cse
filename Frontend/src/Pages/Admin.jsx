@@ -26,9 +26,9 @@ function AdminPage() {
             </button>
             {selectedComponent === 'Blogs' && (
               <div className="dropdown-content">
-                <a href="#">Add</a>
+                <a href="/admin/writeblogs">Add</a>
                 <a href="#">Update</a>
-                <a href="#">Delete</a>
+                <a href="/admin/deleteblogs">Delete</a>
               </div>
             )}
           </div>
@@ -45,7 +45,7 @@ function AdminPage() {
             </button>
             {selectedComponent === 'Members' && (
               <div className="dropdown-content">
-                <a href="#">Add</a>
+                <a href="/admin/addExecMember">Add</a>
                 <a href="#">Update</a>
                 <a href="#">Delete</a>
               </div>
@@ -64,9 +64,9 @@ function AdminPage() {
             </button>
             {selectedComponent === 'Events' && (
               <div className="dropdown-content">
-                <a href="#">Add</a>
+                <a href="/admin/createevent">Add</a>
                 <a href="#">Update</a>
-                <a href="#">Delete</a>
+                <a href="/admin/deleteevents">Delete</a>
               </div>
             )}
           </div>
@@ -83,7 +83,7 @@ function AdminPage() {
             </button>
             {selectedComponent === 'Competition' && (
               <div className="dropdown-content">
-                <a href="#">Add</a>
+                <a href="/admin/createintracomp">Add</a>
                 <a href="#">Update</a>
                 <a href="#">Delete</a>
               </div>

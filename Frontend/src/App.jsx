@@ -16,14 +16,16 @@ import AddExecMember from './Pages/AddExecMember.jsx';
 import ExecutiveMembers from './Pages/ExecutiveMembers.jsx';
 import EventsAndAchievements from './Pages/EventsAndAchievements.jsx';
 import { ShowSelectedBlog } from './Pages/ShowSelectedBlog.jsx';
-import { ShowSelectedEvent } from './Pages/ShowSelectedEvent.jsx';
+import ShowSelectedEvent from './Pages/ShowSelectedEvent.jsx';
 import { BlogWriter } from './BlogComponents/BlogWriter.jsx';
 import { HeaderComponent, FooterComponent } from './BlogComponents/HeaderFooter.jsx';
 import AdminPage from './Pages/Admin.jsx';
 import ExecutiveComponent from './components/Executive.jsx';
+import { EventWriter } from './BlogComponents/EventWriter.jsx';
 
 import CustomNavbar from './components/Header'
 import HomePage from './Pages/HomePage';
+import { AddIntraComp } from './BlogComponents/AddIntraComp.jsx';
 
 const App = () => {
   //const [showBlogWriter, setBlogWriter] = useState(false);
@@ -38,7 +40,8 @@ const App = () => {
 
         <Route index element={<HomePage/>} />
         <Route path="/blogs" element={<BlogsHomePage/>} />
-        <Route path="/admin/profile/:username" element={<UserProfile/>} />
+        <Route path="/admin/profile/:username" element={<AdminPage/>} />
+        <Route path="/admin/register" element={<Register/>} />
         <Route path="/admin/deleteblogs" element={<BlogDeleter/>} />
         <Route path="/admin/writeblogs" element={<BlogWriter/>} />
         <Route path="/members" element={<ExecutiveMembers/>} />
@@ -50,6 +53,8 @@ const App = () => {
         <Route path="/IntraCompetitions" element={<IntraVarsityComps/>} />
         <Route path="/showSelectedEvent" element={<ShowSelectedEvent/>} />
         <Route path="/admin/deleteevents" element={<EventDeleter/>} />
+        <Route path="/admin/createevent" element={<EventWriter/>} />
+        <Route path="/admin/createintracomp" element={<AddIntraComp/>} />
 
         
         

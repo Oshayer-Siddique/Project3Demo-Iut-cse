@@ -90,7 +90,7 @@ const InterRegistrationForm = () => {
           <div className="title">Register Now!</div>
           {renderForm}
           <span className='error'>{errorMessage}</span><br/>
-          <Link to="/admin/login">Go Back</Link>
+          <Link to="/">Go Back</Link>
       </div>
     </div>
   );
@@ -98,7 +98,7 @@ const InterRegistrationForm = () => {
     <div className="app">
       <div className="login-form">
         <div className="title">Registration Successful!</div>
-        <Link to="/admin/login">Go Back</Link>
+        <Link to="/">Go Back</Link>
     </div>
   </div>
   );
