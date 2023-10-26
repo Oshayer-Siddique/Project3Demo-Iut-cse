@@ -30,7 +30,7 @@ mongoose
 
 
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors());
 //app.use(cors());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
@@ -61,22 +61,6 @@ const AboutRouter = require('./router/AboutRouter');
 const IntraRegRouter = require('./router/IntraRegRouter');
 const InterRegRouter = require('./router/InterRegRouter');
 const UploadEventRouter = require('./router/UploadEventRouter');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

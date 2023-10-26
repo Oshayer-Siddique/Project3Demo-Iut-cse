@@ -8,7 +8,7 @@ export default function ExecutiveMembers() {
   
   useEffect(() => {
     if (searchWord === "") {
-      axios.get('http://localhost:5050/iut-cse/getmember')
+      axios.get('http://34.42.153.40:5050/iut-cse/getmember')
         .then(res => {
           setMembers(res.data);
         })
@@ -17,7 +17,7 @@ export default function ExecutiveMembers() {
         });
     } else {
       const formData = { name: searchWord };
-      axios.post('http://localhost:5050/iut-cse/searchmember', formData)
+      axios.post('http://34.42.153.40:5050/iut-cse/searchmember', formData)
         .then(res => {
           setMembers(res.data);
         })

@@ -4,7 +4,7 @@ export default function EventDeleter() {
     const [Events, setEvents] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5050/iut-cse/getEvent').then(res => {
+        axios.get('http://34.42.153.40:5050/iut-cse/getEvent').then(res => {
             // console.log(res)
             let arr = res.data.map(b => (b.title));
             arr = arr.filter((item, index) => arr.indexOf(item) === index);
@@ -14,7 +14,7 @@ export default function EventDeleter() {
 
     const DeleteEvent = (event) => {
         const formData = { title: event };
-        axios.post('http://localhost:5050/iut-cse/admin/deleteevent', formData).then(res => {
+        axios.post('http://34.42.153.40:5050/iut-cse/admin/deleteevent', formData).then(res => {
             console.log("Event deleted");
             console.log(res);
             setEvents([]);

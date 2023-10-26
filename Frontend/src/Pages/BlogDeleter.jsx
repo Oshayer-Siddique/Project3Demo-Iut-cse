@@ -4,7 +4,7 @@ export default function BlogDeleter() {
     const [Blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5050/iut-cse/getblog').then(res => {
+        axios.get('http://34.42.153.40:5050/iut-cse/getblog').then(res => {
             // console.log(res)
             let arr = res.data.map(b => (b.title));
             arr = arr.filter((item, index) => arr.indexOf(item) === index);
@@ -14,7 +14,7 @@ export default function BlogDeleter() {
 
     const DeleteBlog = (b) => {
         const formData = { title: b };
-        axios.post('http://localhost:5050/iut-cse/admin/deleteblog', formData).then(res => {
+        axios.post('http://34.42.153.40:5050/iut-cse/admin/deleteblog', formData).then(res => {
             console.log("Blog deleted");
             console.log(res);
             setBlogs([]);

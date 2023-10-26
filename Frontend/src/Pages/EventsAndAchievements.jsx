@@ -8,7 +8,7 @@ export default function EventsAndAchievements() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:5050/iut-cse/getevent').then(res => {
+    axios.get('http://34.42.153.40:5050/iut-cse/getevent').then(res => {
       let i = 0;
       setEvents(res.data.map(event => ({ title: event.title, body: event.body, ID: i++, url: event.imageUrl })))
     })

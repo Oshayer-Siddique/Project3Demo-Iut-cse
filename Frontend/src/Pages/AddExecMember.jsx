@@ -19,7 +19,7 @@ function AddExecMember() {
     console.log(formData)
     setMessage('Please Wait');
 
-    axios.post('http://localhost:5050/iut-cse/admin/addmember', formData)
+    axios.post('http://34.42.153.40:5050/iut-cse/admin/addmember', formData)
       .then((response) => {
         console.log(response);
         console.log("Member Added");

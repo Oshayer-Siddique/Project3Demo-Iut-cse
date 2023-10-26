@@ -10,7 +10,7 @@ export function IntraVarsityComps(){
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:5050/iut-cse/getintrareg').then(res => {
+    axios.get('http://34.42.153.40:5050/iut-cse/getintrareg').then(res => {
       // console.log(res)
       let i = 0;
       setComps(res.data.map(b => ({ title: b.title, ID: i++, link: b.link })))

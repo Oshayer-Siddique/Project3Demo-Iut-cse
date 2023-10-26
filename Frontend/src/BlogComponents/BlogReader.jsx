@@ -29,7 +29,7 @@ export function BlogReader() {
     });
 
     if (searchWord == "") {
-      axios.get('http://localhost:5050/iut-cse/getblog').then(res => {
+      axios.get('http://34.42.153.40:5050/iut-cse/getblog').then(res => {
         // console.log(res)
         let i = 0;
         setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body, time: b.uploadTime, imgURL: b.imageUrl })))
@@ -38,7 +38,7 @@ export function BlogReader() {
     }
     else {
       const formData = { title: searchWord };
-      axios.post('http://localhost:5050/iut-cse/searchblog', formData)
+      axios.post('http://34.42.153.40:5050/iut-cse/searchblog', formData)
         .then((res) => {
           let i = 0;
           setBlogs(res.data.map(b => ({ title: b.title, ID: i++, body: b.body, time: b.uploadTime, imgURL: b.imageUrl  })))

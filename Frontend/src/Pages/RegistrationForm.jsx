@@ -17,7 +17,7 @@ const RegistrationForm = () => {
     const formData = { username, password, email };
     setError('Please wait')
 
-    axios.post('http://localhost:5050/iut-cse/admin/register', formData)
+    axios.post('http://34.42.153.40:5050/iut-cse/admin/register', formData)
       .then((response) => {
         console.log(response.data);
         setSuccess(true);

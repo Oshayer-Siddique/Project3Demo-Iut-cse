@@ -22,7 +22,7 @@ const InterRegistrationForm = () => {
     const formData = { name, university, session, email, teamname, category, teamsize };
     setError('Please wait')
 
-    axios.post('http://localhost:5050/iut-cse/interreg', formData)
+    axios.post('http://34.42.153.40:5050/iut-cse/interreg', formData)
       .then((response) => {
         console.log(response.data);
         setSuccess(true);

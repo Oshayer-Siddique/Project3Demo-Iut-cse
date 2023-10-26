@@ -20,7 +20,7 @@ const LoginForm = () => {
     setErrorMessage('Please Wait');
 
     axios
-      .post('http://localhost:5050/iut-cse/admin/login', formData)
+      .post('http://34.42.153.40:5050/iut-cse/admin/login', formData)
       .then((response) => {
         console.log(response);
         console.log('OK');
