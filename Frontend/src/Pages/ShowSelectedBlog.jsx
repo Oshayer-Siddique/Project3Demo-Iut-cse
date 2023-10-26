@@ -5,31 +5,26 @@ export function ShowSelectedBlog() {
     let navigate = useNavigate();
     return <>
         <div id="main">
-            <div className="breadcrumbs">
-                <div className="container">
-                    <h2>{sessionStorage.getItem('title')}</h2>
-                </div>
+            <div className="container">
+                <h2 className="text-center">{sessionStorage.getItem('title')}</h2>
             </div>
         </div>
         <br />
 
         <div className="container">
             <div className="text-center">
-                <img src={`${sessionStorage.getItem('imgURL')}`} className="img-thumbnail"/>
-            </div>
-        </div>
-
-        <br/>
-
-        <div className="card w-100 ">
-            <div className="card">
-                <div className="card-body">
-                    <div className="pre">{sessionStorage.getItem('body')}</div>
-                </div>
+                <img src={`${sessionStorage.getItem('imgURL')}`} className="img-thumbnail" style={{ width: "300px" }} />
             </div>
         </div>
 
         <br />
+
+        <div className="container">
+            <div className="text-justify" style={{ whiteSpace: "pre-wrap" }}>{sessionStorage.getItem('body')}</div>
+        </div>
+
+        <br />
+
 
 
         <div>
