@@ -98,7 +98,7 @@ export function BlogReader() {
                 <span className="date">{blog.time.substring(11,19)} | {blog.time.substring(0,10)} </span>
               </p>
               <p className="blog-content">
-                {blog.body.substring(0, 50)}...
+                {blog.body.substring(0, 30)}...
               </p>
               <a
                 href=""

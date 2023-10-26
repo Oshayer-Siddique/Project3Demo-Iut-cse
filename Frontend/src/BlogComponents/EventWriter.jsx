@@ -86,7 +86,7 @@ function EventWriter() {
         <input className="form-control" placeholder='Title' type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required />
       </div>
       <div className="form-group">
-        <textarea className="form-control" placeholder='Enter blog body' name='body' value={body} onChange={(e) => setBody(e.target.value)} required></textarea>
+        <textarea className="form-control" placeholder='Enter event description' name='body' value={body} onChange={(e) => setBody(e.target.value)} required></textarea>
       </div>
       <div className="form-group">
         <input className="form-control" type="file" onInput={imgUpload} required />

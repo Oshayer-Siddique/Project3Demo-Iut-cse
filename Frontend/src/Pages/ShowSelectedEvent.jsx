@@ -15,19 +15,17 @@ export default function ShowSelectedBlog() {
 
         <div className="container">
             <div className="text-center">
-                <img src={`${sessionStorage.getItem('eventurl')}`} className="img-thumbnail"/>
+                <img src={`${sessionStorage.getItem('eventurl')}`} className="img-thumbnail" style={{width: "300px"}}/>
             </div>
         </div>
 
         <br/>
 
-        <div className="card w-100 ">
-            <div className="card">
-                <div className="card-body">
-                    <div className="pre">{sessionStorage.getItem('eventbody')}</div>
-                </div>
-            </div>
+        <div className="container">
+            <div className="text-justify" style={{ whiteSpace: "pre-wrap" }}>{sessionStorage.getItem('eventbody')}</div>
         </div>
+
+        <br />
 
         <br />
 

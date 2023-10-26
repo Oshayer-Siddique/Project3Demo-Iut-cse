@@ -42,43 +42,43 @@ const InterRegistrationForm = () => {
     <div className="form">
       <form onSubmit={handleSubmit}>
 
-        <div className="input-container">
+        <div className="form-group">
           <label>Name </label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
+          <input className="form-control" type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
         </div>
 
-        <div className="input-container">
+        <div className="form-group">
           <label>University </label>
-          <input type="text" value={university} onChange={(e) => setUni(e.target.value)} required/>
+          <input className="form-control" type="text" value={university} onChange={(e) => setUni(e.target.value)} required/>
         </div>
 
-        <div className="input-container">
+        <div className="form-group">
           <label>Session </label>
-          <input type="text" value={session} onChange={(e) => setSession(e.target.value)} required/>
+          <input className="form-control" type="text" value={session} onChange={(e) => setSession(e.target.value)} required/>
         </div>
 
-        <div className="input-container">
+        <div className="form-group">
           <label>Email </label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+          <input className="form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
         </div>
 
-        <div className="input-container">
+        <div className="form-group">
           <label>Team Name </label>
-          <input type="text" value={teamname} onChange={(e) => setTeam(e.target.value)} required/>
+          <input className="form-control" type="text" value={teamname} onChange={(e) => setTeam(e.target.value)} required/>
         </div>
 
-        <div className="input-container">
+        <div className="form-group">
           <label>Category </label>
-          <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} required/>
+          <input className="form-control" type="text" value={category} onChange={(e) => setCategory(e.target.value)} required/>
         </div>
 
-        <div className="input-container">
+        <div className="form-group">
           <label>Team Size </label>
-          <input type="number" value={teamsize} onChange={(e) => setTeamsize(e.target.value)} required/>
+          <input className="form-control" type="number" value={teamsize} onChange={(e) => setTeamsize(e.target.value)} required/>
         </div>
 
-        <div className="button-container">
-          <input type="submit" />
+        <div className="form-group text-center">
+          <input className="btn btn-primary" type="submit" />
         </div>
       </form>
     </div>
@@ -86,8 +86,8 @@ const InterRegistrationForm = () => {
 
   if(!successful) return (
     <div className="app">   
-      <div className="login-form">
-          <div className="title">Register Now!</div>
+      <div className="container">
+          <h1 className="text-center">Register Now!</h1>
           {renderForm}
           <span className='error'>{errorMessage}</span><br/>
           <Link to="/">Go Back</Link>
